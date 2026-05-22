@@ -27,7 +27,7 @@ sudo mmdebstrap \
     --arch=$ARCH \
     --variant=minbase \
     --components="main,contrib,non-free" \
-    --include=locales,passwd,ca-certificates,sudo,dbus,mesa-utils \
+    --include=locales,passwd,ca-certificates,devuan-keyring \
     --format=tar \
     ${dist_version} \
     devuan-$ARCH_DOCKER.tar.xz \
