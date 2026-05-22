@@ -1,5 +1,5 @@
 # export the env
-export RELEASE=daedalus
+export RELEASE=excalibur
 export ARCH_DOCKER=$ARCH
 case "$ARCH" in
     x86_64) ARCH=amd64 ;;
