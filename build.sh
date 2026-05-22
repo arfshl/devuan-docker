@@ -1,11 +1,11 @@
 # export the env
-export RELEASE=excalibur
+export RELEASE=daedalus
 case "$ARCH" in
-    armhf) ARCH_DOCKER=arm ;;
+    armhf) ARCH_DOCKER=armv7 ;;
     ppc64el) ARCH_DOCKER=ppc64le ;;
     arm64) ARCH_DOCKER=arm64 ;;
     amd64) ARCH_DOCKER=amd64 ;;
-    armel) ARCH_DOCKER=arm ;;
+    armel) ARCH_DOCKER=armv5 ;;
 esac
 echo "RELEASE=$RELEASE" >> "$GITHUB_OUTPUT"
 echo "ARCH=$ARCH" >> "$GITHUB_OUTPUT"

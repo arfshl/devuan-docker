@@ -78,6 +78,30 @@ jobs:
           path: ./*.tar.xz
           archive: false
 
+  build-armel:
+    runs-on: ubuntu-24.04-arm
+    outputs:
+      RELEASE: ${{ steps.start_build.outputs.RELEASE }}
+    strategy:
+      matrix:
+        arch: [armel]
+    env:
+        ARCH: ${{ matrix.arch }}
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+      - id: start_build
+        run: |
+          bash build.sh
+      - name: Upload artifact
+        uses: actions/upload-artifact@v7
+        with:
+          name: armel
+          path: ./*.tar.xz
+          archive: false
+
   build-ppc64el:
     runs-on: ubuntu-latest
     strategy:
@@ -104,7 +128,7 @@ jobs:
 
   push:
     runs-on: ubuntu-latest
-    needs: [build-amd64, build-arm64, build-armhf, build-ppc64el]
+    needs: [build-amd64, build-arm64, build-armhf, build-armel, build-ppc64el]
     permissions:
       contents: read
       packages: write
@@ -151,6 +175,7 @@ jobs:
             linux/amd64
             linux/arm64
             linux/arm/v7
+            linux/arm/v5
             linux/ppc64le
           tags: |
             ghcr.io/${{ env.REPONAME }}:latest

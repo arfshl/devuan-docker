@@ -1,6 +1,7 @@
 FROM scratch
 ARG TARGETARCH
-ADD devuan-${TARGETARCH}.tar.xz /
+ARG TARGETVARIANT
+ADD devuan-${TARGETARCH}${TARGETVARIANT}.tar.xz /
 CMD ["/bin/bash"]
 LABEL org.opencontainers.image.title="devuan"
 LABEL org.opencontainers.image.description="Unofficial docker image for Devuan GNU/Linux"
