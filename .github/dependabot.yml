@@ -4,6 +4,8 @@ updates:
     directory: "/"
     schedule:
       interval: "weekly" # Checks every week
+    assignees:
+      - "arfshl"
     groups:
       github-actions-updates:
         patterns:
