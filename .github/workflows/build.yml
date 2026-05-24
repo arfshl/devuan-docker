@@ -21,7 +21,7 @@ jobs:
         ARCH: ${{ matrix.arch }}
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
         with:
           fetch-depth: 0
       - id: start_build
@@ -43,7 +43,7 @@ jobs:
         ARCH: ${{ matrix.arch }}
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
         with:
           fetch-depth: 0
       - id: start_build
@@ -65,7 +65,7 @@ jobs:
         ARCH: ${{ matrix.arch }}
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
         with:
           fetch-depth: 0
       - id: start_build
@@ -89,7 +89,7 @@ jobs:
         ARCH: ${{ matrix.arch }}
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
         with:
           fetch-depth: 0
       - id: start_build
@@ -113,7 +113,7 @@ jobs:
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v4
       - name: Checkout Repository
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
         with:
           fetch-depth: 0
       - id: start_build
