@@ -1,5 +1,5 @@
 # export the env
-export RELEASE=excalibur
+export RELEASE=daedalus
 case "$ARCH" in
     armhf) ARCH_DOCKER=armv7 ;;
     ppc64el) ARCH_DOCKER=ppc64le ;;
