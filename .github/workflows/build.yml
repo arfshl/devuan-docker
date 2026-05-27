@@ -178,7 +178,7 @@ jobs:
             linux/arm/v5
             linux/ppc64le
           tags: |
-            ghcr.io/${{ env.REPONAME }}:latest
-            ghcr.io/${{ env.REPONAME }}:${{ needs.build-amd64.outputs.RELEASE }}
+            ghcr.io/arfshl/devuan:latest
+            ghcr.io/arfshl/devuan:${{ needs.build-amd64.outputs.RELEASE }}
             arfshl/devuan:latest
             arfshl/devuan:${{ needs.build-amd64.outputs.RELEASE }}
